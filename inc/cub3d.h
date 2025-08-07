@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muzz <muzz@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: abin-moh <abin-moh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 00:00:00 by student           #+#    #+#             */
-/*   Updated: 2025/07/31 14:03:22 by muzz             ###   ########.fr       */
+/*   Updated: 2025/08/07 11:48:07 by abin-moh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ typedef struct s_img
 
 typedef struct s_texture
 {
-	t_img	img;
-	int		**texture;
+	t_img			img;
+	unsigned int	**texture;
 }	t_texture;
 
 typedef struct s_player
@@ -146,6 +146,8 @@ int		handle_keyrelease(int keycode, t_game *game);
 int		close_game(t_game *game);
 
 /* Movement */
+void	handle_player_rotation(t_game *game);
+void	handle_player_movement(t_game *game);
 void	move_player(t_game *game);
 void	rotate_player(t_game *game, double angle);
 int		is_valid_position(t_game *game, double x, double y);
